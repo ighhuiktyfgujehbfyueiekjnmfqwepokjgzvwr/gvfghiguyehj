@@ -1,0 +1,161 @@
+local function checkwl()
+
+    local HWID
+  
+    local httpS = game:GetService("HttpService")
+    local body = syn.request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+    local decoded = httpS:JSONDecode(body)
+    local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Krnl-Hwid"};
+    for i, v in next, hwid_list do
+      if decoded.headers[v] then
+        HWID = decoded.headers[v];
+        break
+      end
+    end
+  
+    local hwidwl = game:HttpGet("https://raw.githubusercontent.com/JAGthehappygod/uytfvhikuygtgyhuiktgj/main/hwid%20whitelist", true):split("\n")
+  
+    for _,user in pairs(hwidwl) do
+      if HWID == user then
+        return true
+      end
+    end
+  end
+  
+  if not checkwl() then
+    game:Kick("not whitelisted nerd")
+  end
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+local Main = Instance.new("ScreenGui")
+local StackFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local Target = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local ActivateStack = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local FFabuse = Instance.new("TextButton")
+
+--Properties:
+
+
+Main.Name = "Main"
+Main.Parent = game.CoreGui
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+StackFrame.Name = "StackFrame"
+StackFrame.Parent = Main
+StackFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+StackFrame.Position = UDim2.new(0.04, 0, 0.8825375623, 0)
+StackFrame.Size = UDim2.new(0, 550, 0, 105)
+
+UICorner.Parent = StackFrame
+
+TextLabel.Parent = StackFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.Size = UDim2.new(0, 550, 0, 30)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Jags GUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 25.000
+TextLabel.TextStrokeTransparency = 0.000
+
+UICorner_2.Parent = TextLabel
+
+Target.Name = "Target"
+Target.Parent = StackFrame
+Target.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+Target.Position = UDim2.new(0.08, 0, 0.4, 0)
+Target.Size = UDim2.new(0, 125, 0, 50)
+Target.Font = Enum.Font.GothamBold
+Target.PlaceholderColor3 = Color3.fromRGB(200, 200, 200)
+Target.PlaceholderText = "Target"
+Target.Text = ""
+Target.TextColor3 = Color3.fromRGB(200, 200, 200)
+Target.TextSize = 15.000
+Target.TextStrokeTransparency = 0.000
+
+UICorner_3.Parent = Target
+
+ActivateStack.Name = "ActivateStack"
+ActivateStack.Parent = StackFrame
+ActivateStack.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+ActivateStack.Position = UDim2.new(0.4, 0, 0.4, 0)
+ActivateStack.Size = UDim2.new(0, 125, 0, 50)
+ActivateStack.Font = Enum.Font.GothamBold
+ActivateStack.Text = "Activate Stack"
+ActivateStack.TextColor3 = Color3.fromRGB(200, 200, 200)
+ActivateStack.TextSize = 15.000
+ActivateStack.TextStrokeTransparency = 0.000
+
+UICorner_4.Parent = ActivateStack
+
+FFabuse.Name = "FF abuse"
+FFabuse.Parent = StackFrame
+FFabuse.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+FFabuse.Position = UDim2.new(0.70, 0, 0.4, 0)
+FFabuse.Size = UDim2.new(0, 125, 0, 50)
+FFabuse.Font = Enum.Font.GothamBold
+FFabuse.Text = "FF abuse"
+FFabuse.TextColor3 = Color3.fromRGB(200, 200, 200)
+FFabuse.TextSize = 15.000
+FFabuse.TextStrokeTransparency = 0.000
+
+UICorner_4.Parent = FFabuse
+
+-- Scripts:
+
+ActivateStack.MouseButton1Click:Connect(function()
+    getgenv().stack = true
+	while getgenv().stack == true do
+		wait()
+		if Workspace[Target.Text]:FindFirstChild("ForceField") then
+			targetff = true
+		else
+			targetff = false
+			if game.Players.LocalPlayer:FindFirstChild("ForceField") then
+				playerff = true
+			else
+				playerff = false
+
+				if targetff == false and playerff == false then
+					local playerHead = game.Players[Target.Text].Character.Head
+					for i,v in pairs(game:GetService("Workspace").Storage:GetDescendants()) do
+						if v.Name == "TouchInterest" and v.Parent then
+							firetouchinterest(playerHead, v.Parent, 0)
+							
+							firetouchinterest(playerHead, v.Parent, 0)
+							
+							firetouchinterest(playerHead, v.Parent, 0)
+							
+							firetouchinterest(playerHead, v.Parent, 0)
+							
+							firetouchinterest(playerHead, v.Parent, 0)
+							
+							firetouchinterest(playerHead, v.Parent, 0)
+						end
+					end
+				end
+			end
+		end
+	end
+end)
+
+ActivateStack.MouseButton1Click:Connect(function()
+    while true do wait()
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_SpherePunch",
+           [2] = Vector3.new(0,10000000,0)
+       }
+}
+
+Remote:FireServer(unpack(Arguments))
+end
+end)
