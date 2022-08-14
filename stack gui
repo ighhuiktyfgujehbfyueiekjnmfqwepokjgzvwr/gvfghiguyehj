@@ -1,3 +1,6 @@
+if game.PlaceId ~= 2202352383 then 
+    return
+end
 local function checkwl()
 
     local HWID
@@ -25,6 +28,12 @@ local function checkwl()
   if not checkwl() then
     game:Kick("not whitelisted nerd")
   end
+  
+   game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Shady is an ape";
+        Text = "Hi shady";
+        })
+	
 -- Gui to Lua
 -- Version: 3.2
 
