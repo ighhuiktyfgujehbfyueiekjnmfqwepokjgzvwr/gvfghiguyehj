@@ -158,7 +158,7 @@ ActivateStack.MouseButton1Click:Connect(function()
 				playerff = false
 
 				if targetff == false and playerff == false then
-				 pcall(
+				    pcall(
 				        function()
 				            task.wait()
 					local playerHead = game.Players[Target.Text].Character.Head
@@ -177,10 +177,11 @@ ActivateStack.MouseButton1Click:Connect(function()
 							firetouchinterest(playerHead, v.Parent, 0)
 						end
 					end
-				end
+				end)
 			end
 		end
 	end
+end
 end)
 
 ActivateStack.MouseButton1Click:Connect(function()
