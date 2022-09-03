@@ -160,10 +160,10 @@ ActivateStack.MouseButton1Click:Connect(function()
 				if targetff == false and playerff == false then
 				    pcall(
 				        function()
-				            task.wait()
 					local playerHead = game.Players[Target.Text].Character.Head
 					for i,v in pairs(game:GetService("Workspace").Storage:GetDescendants()) do
 						if v.Name == "TouchInterest" and v.Parent then
+						    task.wait()
 							firetouchinterest(playerHead, v.Parent, 0)
 							
 							firetouchinterest(playerHead, v.Parent, 0)
